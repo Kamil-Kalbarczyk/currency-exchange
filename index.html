@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+
+    <!-- Bebas Neue and Lato Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>Currency Rates</h1>
+        </header>
+        <section id="currencyRates">
+            <div class="currencyComparing">
+                <p>quotation day: <span>2021-01-28</span></p>
+                <p>Currencies expressed in: <span>PLN</span></p>
+                <button>Change currency</button>
+            </div>
+            <div class="currencyListContainer">
+                <form>
+                    <input type="text" placeholder="currency search">
+                </form>
+                <ul class="currencyList">
+                    <li>
+                        <div>USD</div>
+                        <div>4.12</div>
+                    </li>
+                    <li>
+                        <div>USD</div>
+                        <div>4.12</div>
+                    </li>
+                    <li>
+                        <div>USD</div>
+                        <div>4.12</div>
+                    </li>
+                    <li>
+                        <div>USD</div>
+                        <div>4.12</div>
+                    </li>
+                    <li>
+                        <div>USD</div>
+                        <div>4.12</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <footer>
+            <a href="http://api.nbp.pl/en.html">National Bank of Poland</a>
+        </footer>
+    </div>
+    <script type="module" src="./js/code.js"></script>
+</body>
+
+</html>
