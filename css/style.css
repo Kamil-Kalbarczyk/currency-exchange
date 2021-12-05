@@ -195,4 +195,15 @@ header h1 {
   -webkit-transform: translateX(5%);
           transform: translateX(5%);
 }
+
+footer {
+  background-color: black;
+  height: 70px;
+  color: white;
+  text-align: center;
+}
+
+footer p {
+  padding: 7px 0;
+}
 /*# sourceMappingURL=style.css.map */
