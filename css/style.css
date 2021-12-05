@@ -68,19 +68,46 @@ header h1 {
   width: 40%;
 }
 
-#currencyRates ul {
+#currencyRates .currencyListContainer input {
+  width: 100%;
+  height: 30px;
+  padding: 3px;
+}
+
+#currencyRates .currencyListContainer ul {
   list-style: none;
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  margin-top: 15px;
 }
 
-#currencyRates ul li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 10px;
+#currencyRates .currencyListContainer ul li {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'symbol course' 'name name';
   border-bottom: 1px solid black;
-  padding: 5px 0;
+  padding: 10px 0;
+}
+
+#currencyRates .currencyListContainer ul li .divCurrencySymbol {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: symbol;
+  font-weight: bold;
+}
+
+#currencyRates .currencyListContainer ul li .divCurrencyRate {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: course;
+}
+
+#currencyRates .currencyListContainer ul li .divCurrencyName {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: name;
+  color: gray;
 }
 /*# sourceMappingURL=style.css.map */

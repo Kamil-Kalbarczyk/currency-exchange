@@ -20,15 +20,23 @@ const renderCurrences = (currences) => {
     currences.forEach((currency) => {
         const li = document.createElement('li');
         const divCurrencySymbol = document.createElement('div');
+        divCurrencySymbol.classList.add('divCurrencySymbol');
         const divCurrencyRate = document.createElement('div');
+        divCurrencyRate.classList.add('divCurrencyRate');
+        const divCurrencyName = document.createElement('div');
+        divCurrencyName.classList.add('divCurrencyName');
+
         divCurrencySymbol.textContent = currency.code;
         divCurrencyRate.textContent = currency.mid;
-        li.append(divCurrencySymbol, divCurrencyRate);
+        divCurrencyName.textContent = currency.currency;
+        li.append(divCurrencySymbol, divCurrencyRate, divCurrencyName);
         currencyList.append(li);
-    })
+    });
 };
 
 renderCurrences(currencyRates);
+
+// search currency
 
 const currencySearchInput = document.querySelector('.currencyListContainer input');
 
@@ -36,7 +44,8 @@ currencySearchInput.addEventListener('keyup', () => {
 
     currencyList.innerHTML = "";
     const searchCurrency = currencyRates.filter((currency) => {
-        return currency.code.toLowerCase().includes(currencySearchInput.value.toLowerCase())
+        if (currency.code.toLowerCase().includes(currencySearchInput.value.toLowerCase()) || currency.currency.toLowerCase().includes(currencySearchInput.value.toLowerCase()))
+            return currency
     });
 
     renderCurrences(searchCurrency);
@@ -47,3 +56,29 @@ currencySearchInput.addEventListener('keyup', () => {
 const currencyRatesDate = dataBase[0].effectiveDate;
 const currencyQuotationDaySpan = document.querySelector('.QuotationDay span');
 currencyQuotationDaySpan.textContent = currencyRatesDate;
+
+
+// compare currency
+
+const compareCurrencyNameFirst = document.querySelector('.chosenCurrencyFirst p');
+const compareCurrencySymbolFirst = document.querySelector('.chosenCurrencyFirst label');
+const compareCurrencyValueFirst = document.querySelector('.chosenCurrencyFirst input');
+let compareCurrencyCourseFirst;
+
+const compareCurrencyValueSecond = document.querySelector('.chosenCurrencySecond input');
+
+const compareCurrency = function () {
+    compareCurrencyNameFirst.textContent = this.querySelector('.divCurrencyName').textContent;
+    compareCurrencySymbolFirst.textContent = this.querySelector('.divCurrencySymbol').textContent;
+    compareCurrencyCourseFirst = Number(this.querySelector('.divCurrencyRate').textContent);
+}
+
+document.querySelectorAll('.currencyList li').forEach(function (li) {
+    li.addEventListener('click', compareCurrency);
+});
+
+compareCurrencyValueFirst.addEventListener('keyup', () => {
+    const firstCurrencyValue = compareCurrencyValueFirst.value;
+    const firstCurrencyInSecondCurrency = firstCurrencyValue * compareCurrencyCourseFirst;
+    compareCurrencyValueSecond.value = firstCurrencyInSecondCurrency.toFixed(2);
+})

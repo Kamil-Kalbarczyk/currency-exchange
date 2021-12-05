@@ -19,13 +19,27 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>Currency Rates</h1>
+            <h1>Currency Rates in PLN</h1>
         </header>
         <section id="currencyRates">
             <div class="currencyComparing">
                 <p class="QuotationDay">Quotation day: <span>2021-01-28</span></p>
                 <p>Currencies expressed in: <span>PLN</span></p>
                 <!-- <button>Change currency</button> -->
+
+                <div class="comparSection">
+                    <div class="chosenCurrencyFirst">
+                        <p>Dolar amerykański</p>
+                        <label for="currencyFirst">USD</label>
+                        <input id="currencyFirst" type="number" placeholder="100">
+                    </div>
+                    <p>is</p>
+                    <div class="chosenCurrencySecond">
+                        <p>Złoty</p>
+                        <label for="currencySecond">PLN</label>
+                        <input id="currencySecond" type="number" placeholder="100" readonly>
+                    </div>
+                </div>
             </div>
             <div class="currencyListContainer">
                 <form>
