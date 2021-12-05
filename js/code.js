@@ -67,10 +67,13 @@ let compareCurrencyCourseFirst;
 
 const compareCurrencyValueSecond = document.querySelector('.chosenCurrencySecond input');
 
+
 const compareCurrency = function () {
     compareCurrencyNameFirst.textContent = this.querySelector('.divCurrencyName').textContent;
     compareCurrencySymbolFirst.textContent = this.querySelector('.divCurrencySymbol').textContent;
     compareCurrencyCourseFirst = Number(this.querySelector('.divCurrencyRate').textContent);
+    compareCurrencyValueFirst.setAttribute('placeholder', 0);
+    compareCurrencyValueSecond.setAttribute('placeholder', 0);
 }
 
 document.querySelectorAll('.currencyList li').forEach(function (li) {
@@ -81,4 +84,13 @@ compareCurrencyValueFirst.addEventListener('keyup', () => {
     const firstCurrencyValue = compareCurrencyValueFirst.value;
     const firstCurrencyInSecondCurrency = firstCurrencyValue * compareCurrencyCourseFirst;
     compareCurrencyValueSecond.value = firstCurrencyInSecondCurrency.toFixed(2);
-})
+});
+
+// start compare view
+
+const usd = currencyRates.filter((usd) => usd.code === 'USD')[0];
+console.log(usd)
+compareCurrencyValueFirst.setAttribute('placeholder', 100);
+compareCurrencyNameFirst.textContent = usd.currency;
+compareCurrencySymbolFirst.textContent = usd.code;
+compareCurrencyValueSecond.setAttribute('placeholder', compareCurrencyValueFirst.getAttribute('placeholder') * usd.mid);

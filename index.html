@@ -24,20 +24,24 @@
         <section id="currencyRates">
             <div class="currencyComparing">
                 <p class="QuotationDay">Quotation day: <span>2021-01-28</span></p>
-                <p>Currencies expressed in: <span>PLN</span></p>
+                <!-- <p>Currencies expressed in: <span>PLN</span></p> -->
                 <!-- <button>Change currency</button> -->
 
-                <div class="comparSection">
+                <div class="compareSection">
                     <div class="chosenCurrencyFirst">
                         <p>Dolar amerykański</p>
-                        <label for="currencyFirst">USD</label>
-                        <input id="currencyFirst" type="number" placeholder="100">
+                        <div>
+                            <input id="currencyFirst" type="number" placeholder="100">
+                            <label for="currencyFirst">USD</label>
+                        </div>
                     </div>
                     <p>is</p>
                     <div class="chosenCurrencySecond">
-                        <p>Złoty</p>
-                        <label for="currencySecond">PLN</label>
-                        <input id="currencySecond" type="number" placeholder="100" readonly>
+                        <p>złoty</p>
+                        <div>
+                            <input id="currencySecond" type="number" placeholder="100" readonly>
+                            <label for="currencySecond">PLN</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -46,26 +50,6 @@
                     <input type="text" placeholder="currency search">
                 </form>
                 <ul class="currencyList">
-                    <li>
-                        <div>USD</div>
-                        <div>4.12</div>
-                    </li>
-                    <li>
-                        <div>USD</div>
-                        <div>4.12</div>
-                    </li>
-                    <li>
-                        <div>USD</div>
-                        <div>4.12</div>
-                    </li>
-                    <li>
-                        <div>USD</div>
-                        <div>4.12</div>
-                    </li>
-                    <li>
-                        <div>USD</div>
-                        <div>4.12</div>
-                    </li>
                 </ul>
             </div>
         </section>
