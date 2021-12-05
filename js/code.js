@@ -4,7 +4,7 @@ const currencyList = document.querySelector('.currencyList');
 currencyList.innerHTML = "";
 
 try {
-    let response = await fetch('http://api.nbp.pl/api/exchangerates/tables/A/');
+    let response = await fetch('https://api.nbp.pl/api/exchangerates/tables/A/');
     let data = await response.json();
     dataBase = data;
 } catch (error) {
