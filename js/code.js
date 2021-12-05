@@ -12,10 +12,7 @@ try {
 
 };
 
-
-
 const currencyRates = dataBase[0].rates;
-const currencyRatesDate = dataBase[0].effectiveDate;
 
 // render currences
 
@@ -43,4 +40,10 @@ currencySearchInput.addEventListener('keyup', () => {
     });
 
     renderCurrences(searchCurrency);
-})
+});
+
+// render day of quotation
+
+const currencyRatesDate = dataBase[0].effectiveDate;
+const currencyQuotationDaySpan = document.querySelector('.QuotationDay span');
+currencyQuotationDaySpan.textContent = currencyRatesDate;
